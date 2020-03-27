@@ -1,7 +1,95 @@
+:root {
+  --purple: rgb(49, 77, 228);
+  --light-purple: rgba(49, 77, 228, 0.5);
+  --lighter-purple: rgba(49, 77, 228, 0.1);
+  --orange: rgb(250, 133, 49);
+  --light-orange: rgba(250, 133, 49, 0.5);
+  --lighter-orange: rgba(250, 133, 49, 0.3);
+  --grey: rgb(235, 236, 236);
+  --light-grey: rgb(235, 236, 236);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: baskerville;
+}
+
+header {
+  background-color: var(--lighter-purple);
+  padding: 0 0.5rem;
+}
+
+.page-title {
+  color: var(--purple);
+  font-size: 5rem;
+}
+.page-title--first {
+  top: 0.75rem;
+  position: relative;
+  text-shadow: 2px 0px 0px var(--light-orange);
+}
+.page-title--second {
+  bottom: 0.75rem;
+  color: var(--orange);
+  letter-spacing: 3px;
+  position: relative;
+  text-shadow: 2px 0px 0px var(--light-purple);
+}
+.page-title--third {
+  color: var(--light-orange);
+  text-shadow: none;
+}
+
+.booksearch {
+  text-align: center;
+}
+.booksearch form {
+  padding: 0.5rem;
+}
+.booksearch input {
+  background-color: var(--grey);
+  border: none;
+  color: var(--purple);
+  font-family: baskerville;
+  font-size: 3rem;
+  outline: none;
+  padding: 0.5rem;
+  text-align: center;
+}
+.booksearch input::placeholder {
+  color: var(--light-purple);
+}
+.booksearch input:focus {
+  background-color: var(--lighter-orange);
+}
+.booksearch__results {
+  display: flex;
+  flex-flow: wrap;
+}
+.booksearch__results--item {
+  background-color: var(--light-grey);
+  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1) inset;
+  color: var(--purple);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.75rem;
+  width: 25vw;
+}
+.booksearch__results--item:hover {
+  background-color: var(--lighter-purple);
+  box-shadow: 0 0 0px 1px var(--purple) inset;
+}
+.booksearch__results--item-title {
+  font-weight: 700;
+}
+.booksearch__results--item img {
+  margin: 1rem;
 }
 
 /*# sourceMappingURL=App.css.map */

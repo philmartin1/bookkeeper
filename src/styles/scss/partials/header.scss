@@ -1,0 +1,27 @@
+header {
+  background-color: var(--lighter-purple);
+  padding: 0 0.5rem;
+}
+.page-title {
+  color: var(--purple);
+  font-size: 5rem;
+
+  &--first {
+    top: 0.75rem;
+    position: relative;
+    text-shadow: 2px 0px 0px var(--light-orange);
+  }
+
+  &--second {
+    bottom: 0.75rem;
+    color: var(--orange);
+    letter-spacing: 3px;
+    position: relative;
+    text-shadow: 2px 0px 0px var(--light-purple);
+  }
+
+  &--third {
+    color: var(--light-orange);
+    text-shadow: none;
+  }
+}

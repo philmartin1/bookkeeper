@@ -1,0 +1,52 @@
+.booksearch {
+  text-align: center;
+
+  form {
+    padding: 0.5rem;
+  }
+  input {
+    background-color: var(--grey);
+    border: none;
+    color: var(--purple);
+    font-family: baskerville;
+    font-size: 3rem;
+    outline: none;
+    padding: 0.5rem;
+    text-align: center;
+    &::placeholder {
+      color: var(--light-purple);
+    }
+    &:focus {
+      background-color: var(--lighter-orange);
+    }
+  }
+
+  &__results {
+    display: flex;
+    flex-flow: wrap;
+
+    &--item {
+      background-color: var(--light-grey);
+      box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1) inset;
+      color: var(--purple);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0.75rem;
+      width: 25vw;
+
+      &:hover {
+        background-color: var(--lighter-purple);
+        box-shadow: 0 0 0px 1px var(--purple) inset;
+      }
+
+      &-title {
+        font-weight: 700;
+      }
+
+      img {
+        margin: 1rem;
+      }
+    }
+  }
+}
