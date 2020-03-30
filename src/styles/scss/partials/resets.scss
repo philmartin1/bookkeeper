@@ -7,3 +7,8 @@
 body {
   font-family: baskerville;
 }
+
+::selection {
+  background-color: var(--purple);
+  color: var(--orange);
+}

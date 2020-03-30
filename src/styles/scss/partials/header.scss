@@ -5,6 +5,11 @@ header {
 .page-title {
   color: var(--purple);
   font-size: 5rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 
   &--first {
     top: 0.75rem;

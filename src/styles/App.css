@@ -19,6 +19,11 @@ body {
   font-family: baskerville;
 }
 
+::selection {
+  background-color: var(--purple);
+  color: var(--orange);
+}
+
 header {
   background-color: var(--lighter-purple);
   padding: 0 0.5rem;
@@ -27,6 +32,10 @@ header {
 .page-title {
   color: var(--purple);
   font-size: 5rem;
+  text-decoration: none;
+}
+.page-title:hover {
+  text-decoration: underline;
 }
 .page-title--first {
   top: 0.75rem;
@@ -67,6 +76,28 @@ header {
 .booksearch input:focus {
   background-color: var(--lighter-orange);
 }
+.booksearch__pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.booksearch__pagination > * {
+  padding: 0.2rem;
+}
+.booksearch__pagination--button {
+  background-color: var(--lighter-purple);
+  border: 1px solid var(--lighter-purple);
+  color: var(--purple);
+  cursor: pointer;
+}
+.booksearch__pagination--button:hover {
+  border: 1px solid var(--purple);
+}
+.booksearch__pagination--button:active {
+  background-color: var(--lighter-orange);
+  border: 1px solid var(--orange);
+  color: var(--orange);
+}
 .booksearch__results {
   display: flex;
   flex-flow: wrap;
@@ -75,6 +106,7 @@ header {
   background-color: var(--light-grey);
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1) inset;
   color: var(--purple);
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -84,6 +116,11 @@ header {
 .booksearch__results--item:hover {
   background-color: var(--lighter-purple);
   box-shadow: 0 0 0px 1px var(--purple) inset;
+}
+.booksearch__results--item:active {
+  background-color: var(--lighter-orange);
+  box-shadow: 0 0 0px 1px var(--orange) inset;
+  color: var(--orange);
 }
 .booksearch__results--item-title {
   font-weight: 700;
