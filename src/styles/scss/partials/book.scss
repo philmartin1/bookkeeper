@@ -1,0 +1,10 @@
+.book {
+  margin: 2rem 0;
+  text-align: center;
+
+  & > div > div {
+    min-height: 50vh;
+    margin: auto;
+    width: 90vw;
+  }
+}

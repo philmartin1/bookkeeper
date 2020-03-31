@@ -1,7 +1,10 @@
 header {
   background-color: var(--lighter-purple);
+  display: flex;
+  justify-content: space-between;
   padding: 0 0.5rem;
 }
+
 .page-title {
   color: var(--purple);
   font-size: 5rem;
@@ -28,5 +31,18 @@ header {
   &--third {
     color: var(--light-orange);
     text-shadow: none;
+  }
+}
+
+.current-book {
+  &__container {
+    padding: 1rem;
+    text-align: center;
+
+    & > p {
+      color: var(--purple);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
   }
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ResultTile from "./results/ResultTile";
 import ResultsNav from "./results/ResultsNav";
 
-function BookSearch() {
+function Search(props) {
   const [searchInput, setSearchInput] = useState("");
   const [searchResults, setSearchResults] = useState({});
   const [page, setPage] = useState(1);
@@ -11,14 +11,6 @@ function BookSearch() {
   const [initialSearch, setInitialSearch] = useState(true);
 
   const baseURL = "https://www.googleapis.com/books/v1/volumes?q=";
-
-  function activateSearchBox(e) {
-    e.target.placeholder = "";
-  }
-
-  function deactivateSearchBox(e) {
-    e.target.placeholder = "Search...";
-  }
 
   function handleInput(e) {
     setSearchInput(e.target.value);
@@ -83,8 +75,6 @@ function BookSearch() {
           value={searchInput}
           onChange={handleInput}
           placeholder="Search..."
-          onFocus={activateSearchBox}
-          onBlur={deactivateSearchBox}
         />
       </form>
       <div>
@@ -99,7 +89,13 @@ function BookSearch() {
         <div className="booksearch__results">
           {searchResults.totalItems > 0 &&
             searchResults.items.map((result, index) => {
-              return <ResultTile book={result.volumeInfo} key={index} />;
+              return (
+                <ResultTile
+                  book={result.volumeInfo}
+                  key={index}
+                  setSelectedBook={props.setSelectedBook}
+                />
+              );
             })}
         </div>
         <div>
@@ -117,4 +113,4 @@ function BookSearch() {
   );
 }
 
-export default BookSearch;
+export default Search;

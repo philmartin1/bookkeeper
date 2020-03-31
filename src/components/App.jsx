@@ -1,13 +1,13 @@
 import React from "react";
 import "../styles/App.css";
 import Header from "./header/Header";
-import Search from "./search/Search";
+import Main from "./main/Main";
 
 function App() {
   return (
     <div>
       <Header />
-      <Search />
+      <Main />
     </div>
   );
 }

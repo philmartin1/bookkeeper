@@ -2,11 +2,11 @@
   --purple: rgb(49, 77, 228);
   --light-purple: rgba(49, 77, 228, 0.5);
   --lighter-purple: rgba(49, 77, 228, 0.1);
-  --orange: rgb(250, 133, 49);
-  --light-orange: rgba(250, 133, 49, 0.5);
-  --lighter-orange: rgba(250, 133, 49, 0.3);
+  --orange: rgb(241, 103, 23);
+  --light-orange: rgba(241, 103, 23, 0.5);
+  --lighter-orange: rgba(241, 103, 23, 0.3);
   --grey: rgb(235, 236, 236);
-  --light-grey: rgb(235, 236, 236);
+  --light-grey: rgba(235, 236, 236, 0.5);
 }
 
 * {
@@ -26,6 +26,8 @@ body {
 
 header {
   background-color: var(--lighter-purple);
+  display: flex;
+  justify-content: space-between;
   padding: 0 0.5rem;
 }
 
@@ -54,6 +56,26 @@ header {
   text-shadow: none;
 }
 
+.current-book__container {
+  padding: 1rem;
+  text-align: center;
+}
+.current-book__container > p {
+  color: var(--purple);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.book {
+  margin: 2rem 0;
+  text-align: center;
+}
+.book > div > div {
+  min-height: 50vh;
+  margin: auto;
+  width: 90vw;
+}
+
 .booksearch {
   text-align: center;
 }
@@ -65,16 +87,19 @@ header {
   border: none;
   color: var(--purple);
   font-family: baskerville;
-  font-size: 3rem;
+  font-size: 2rem;
+  max-width: 90vw;
   outline: none;
   padding: 0.5rem;
-  text-align: center;
 }
 .booksearch input::placeholder {
   color: var(--light-purple);
 }
-.booksearch input:focus {
+.booksearch input:hover {
   background-color: var(--lighter-orange);
+}
+.booksearch input:focus {
+  background-color: var(--light-orange);
 }
 .booksearch__pagination {
   display: flex;
@@ -89,6 +114,7 @@ header {
   border: 1px solid var(--lighter-purple);
   color: var(--purple);
   cursor: pointer;
+  width: 15vw;
 }
 .booksearch__pagination--button:hover {
   border: 1px solid var(--purple);
@@ -112,6 +138,11 @@ header {
   justify-content: center;
   padding: 0.75rem;
   width: 25vw;
+}
+@media (max-width: 800px) {
+  .booksearch__results--item {
+    width: 50vw;
+  }
 }
 .booksearch__results--item:hover {
   background-color: var(--lighter-purple);
