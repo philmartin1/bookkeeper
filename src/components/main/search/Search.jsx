@@ -45,6 +45,7 @@ function Search(props) {
       setPage(page + 1);
       updatePage(newStart);
     }
+    scrollTop();
   }
 
   function prevPage() {
@@ -59,6 +60,20 @@ function Search(props) {
     setResultsStart(newStart);
     updatePage(newStart);
     page > 1 ? setPage(page - 1) : setPage(1);
+    scrollTop();
+  }
+
+  function scrollTop() {
+    const headerHeight = document.querySelector("header").offsetHeight;
+    const book = document.querySelector(".book");
+    let bookHeight = 0;
+    if (book) {
+      bookHeight = book.offsetHeight + 64; // 64 is the margin of 1rem top and bottom
+    }
+    document.scrollingElement.scrollTo({
+      top: headerHeight + bookHeight,
+      behavior: "smooth"
+    });
   }
 
   useEffect(() => {
@@ -105,6 +120,7 @@ function Search(props) {
               page={page}
               nextPage={nextPage}
               prevPage={prevPage}
+              scrollTop={scrollTop}
             />
           )}
         </div>

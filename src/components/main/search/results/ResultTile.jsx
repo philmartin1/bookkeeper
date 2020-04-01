@@ -12,8 +12,19 @@ function ResultTile(props) {
     }
   }
 
+  function scrollTop() {
+    const headerHeight = document.querySelector("header").offsetHeight;
+    document.scrollingElement.scrollTo({
+      top: headerHeight,
+      behavior: "smooth"
+    });
+  }
+
   function openBook(e) {
     props.setSelectedBook(props.book);
+    setTimeout(() => {
+      scrollTop();
+    }, 10);
   }
 
   return (

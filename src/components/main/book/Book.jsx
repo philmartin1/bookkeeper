@@ -1,11 +1,21 @@
 import React from "react";
 
 function Book(props) {
-  function clearSelectedBook() {
-    console.log(props.book);
-
-    props.setSelectedBook();
+  function scrollTop() {
+    const headerHeight = document.querySelector("header").offsetHeight;
+    document.scrollingElement.scrollTo({
+      top: headerHeight,
+      behavior: "smooth"
+    });
   }
+
+  function clearSelectedBook() {
+    props.setSelectedBook();
+    setTimeout(() => {
+      scrollTop();
+    }, 10);
+  }
+
   return (
     <div className="book">
       <div>
