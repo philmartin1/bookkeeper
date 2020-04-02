@@ -32,24 +32,6 @@
     & > * {
       padding: 0.2rem;
     }
-
-    &--button {
-      background-color: var(--lighter-purple);
-      border: 1px solid var(--lighter-purple);
-      color: var(--purple);
-      cursor: pointer;
-      width: 15vw;
-
-      &:hover {
-        border: 1px solid var(--purple);
-      }
-
-      &:active {
-        background-color: var(--lighter-orange);
-        border: 1px solid var(--orange);
-        color: var(--orange);
-      }
-    }
   }
 
   &__results {

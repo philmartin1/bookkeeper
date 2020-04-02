@@ -2,11 +2,11 @@ import React from "react";
 import PageTitle from "./PageTitle";
 import CurrentBook from "./CurrentBook";
 
-function Header() {
+function Header(props) {
   return (
     <header>
       <PageTitle />
-      <CurrentBook />
+      <CurrentBook book={props.book} />
     </header>
   );
 }

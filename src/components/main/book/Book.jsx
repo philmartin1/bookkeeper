@@ -16,16 +16,20 @@ function Book(props) {
     }, 10);
   }
 
+  function setCurrentlyReading() {
+    localStorage.setItem("currentRead", JSON.stringify(props.book));
+    props.setCurrentRead(props.book);
+    document.scrollingElement.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   return (
     <div className="book">
       <div>
         <div className="booksearch__results--item">
-          <p
-            className="booksearch__pagination--button"
-            onClick={clearSelectedBook}
-          >
-            CLOSE
-          </p>
+          <button onClick={clearSelectedBook}>CLOSE</button>
+          <button onClick={setCurrentlyReading}>
+            Mark as currently reading
+          </button>
           <div>
             <p className="booksearch__results--item-title">
               {props.book.title}
