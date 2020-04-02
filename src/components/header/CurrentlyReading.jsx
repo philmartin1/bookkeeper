@@ -1,6 +1,6 @@
 import React from "react";
 
-function CurrentBook(props) {
+function CurrentlyReading(props) {
   return (
     <div className="current-book__container">
       {props.book && (
@@ -20,4 +20,4 @@ function CurrentBook(props) {
     </div>
   );
 }
-export default CurrentBook;
+export default CurrentlyReading;

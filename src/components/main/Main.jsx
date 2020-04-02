@@ -11,7 +11,7 @@ function Main(props) {
         <Book
           book={selectedBook}
           setSelectedBook={setSelectedBook}
-          setCurrentRead={props.setCurrentRead}
+          setLibrary={props.setLibrary}
         />
       )}
       <Search setSelectedBook={setSelectedBook} />

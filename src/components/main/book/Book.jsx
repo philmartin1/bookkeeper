@@ -17,8 +17,9 @@ function Book(props) {
   }
 
   function setCurrentlyReading() {
-    localStorage.setItem("currentRead", JSON.stringify(props.book));
-    props.setCurrentRead(props.book);
+    const storedLibrary = JSON.parse(localStorage.getItem("library"));
+    storedLibrary.currentlyReading = props.book;
+    props.setLibrary(storedLibrary);
     document.scrollingElement.scrollTo({ top: 0, behavior: "smooth" });
   }
 

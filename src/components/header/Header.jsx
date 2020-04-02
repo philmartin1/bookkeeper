@@ -1,12 +1,12 @@
 import React from "react";
 import PageTitle from "./PageTitle";
-import CurrentBook from "./CurrentBook";
+import CurrentlyReading from "./CurrentlyReading";
 
 function Header(props) {
   return (
     <header>
       <PageTitle />
-      <CurrentBook book={props.book} />
+      <CurrentlyReading book={props.currentlyReading} />
     </header>
   );
 }

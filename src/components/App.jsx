@@ -4,17 +4,21 @@ import Header from "./header/Header";
 import Main from "./main/Main";
 
 function App() {
-  const [currentRead, setCurrentRead] = useState();
+  const [library, setLibrary] = useState({});
 
   useEffect(() => {
-    const currentRead = JSON.parse(localStorage.getItem("currentRead"));
-    if (currentRead) setCurrentRead(currentRead);
+    const storedLibrary = JSON.parse(localStorage.getItem("library"));
+    if (storedLibrary) setLibrary(storedLibrary);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("library", JSON.stringify(library));
+  }, [library]);
 
   return (
     <div>
-      <Header book={currentRead} />
-      <Main setCurrentRead={setCurrentRead} />
+      <Header currentlyReading={library.currentlyReading} />
+      <Main setLibrary={setLibrary} />
     </div>
   );
 }
