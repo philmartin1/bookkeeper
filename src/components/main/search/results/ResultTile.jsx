@@ -16,7 +16,7 @@ function ResultTile(props) {
     const headerHeight = document.querySelector("header").offsetHeight;
     document.scrollingElement.scrollTo({
       top: headerHeight,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }
 
@@ -24,11 +24,11 @@ function ResultTile(props) {
     props.setSelectedBook(props.book);
     setTimeout(() => {
       scrollTop();
-    }, 10);
+    }, 1);
   }
 
   return (
-    <div className="booksearch__results--item" onClick={openBook}>
+    <div className="search__results--item" onClick={openBook}>
       {props.book.imageLinks && (
         <div>
           <img
@@ -38,7 +38,7 @@ function ResultTile(props) {
         </div>
       )}
       <div>
-        <p className="booksearch__results--item-title">{props.book.title}</p>
+        <p className="search__results--item-title">{props.book.title}</p>
         <p>{bookAuthors}</p>
       </div>
     </div>

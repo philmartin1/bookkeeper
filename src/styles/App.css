@@ -16,6 +16,7 @@
 }
 
 body {
+  color: var(--purple);
   font-family: baskerville;
 }
 
@@ -82,28 +83,30 @@ header {
   text-align: center;
 }
 .current-book__container > div > p {
-  color: var(--purple);
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
-.book {
-  margin: 2rem 0;
-  text-align: center;
-}
-.book > div > div {
+.book, .search__results--item {
+  background-color: var(--lighter-purple);
+  box-shadow: 0 0 0px 1px var(--purple) inset;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem auto;
   min-height: 50vh;
-  margin: auto;
+  padding: 0.75rem;
+  text-align: center;
   width: 90vw;
 }
 
-.booksearch {
+.search {
   text-align: center;
 }
-.booksearch form {
+.search form {
   padding: 0.5rem;
 }
-.booksearch input {
+.search input {
   background-color: var(--grey);
   border: none;
   color: var(--purple);
@@ -113,56 +116,52 @@ header {
   outline: none;
   padding: 0.5rem;
 }
-.booksearch input::placeholder {
+.search input::placeholder {
   color: var(--light-purple);
 }
-.booksearch input:hover {
+.search input:hover {
   background-color: var(--lighter-orange);
 }
-.booksearch input:focus {
+.search input:focus {
   background-color: var(--light-orange);
 }
-.booksearch__pagination {
+.search__pagination {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
 }
-.booksearch__pagination > * {
+.search__pagination > * {
   padding: 0.2rem;
 }
-.booksearch__results {
+.search__results {
   display: flex;
   flex-flow: wrap;
 }
-.booksearch__results--item {
+.search__results--item {
   background-color: var(--light-grey);
   box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1) inset;
-  color: var(--purple);
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0.75rem;
+  margin: 0;
   width: 25vw;
 }
 @media (max-width: 800px) {
-  .booksearch__results--item {
+  .search__results--item {
     width: 50vw;
   }
 }
-.booksearch__results--item:hover {
+.search__results--item:hover {
   background-color: var(--lighter-purple);
   box-shadow: 0 0 0px 1px var(--purple) inset;
 }
-.booksearch__results--item:active {
+.search__results--item:active {
   background-color: var(--lighter-orange);
   box-shadow: 0 0 0px 1px var(--orange) inset;
   color: var(--orange);
 }
-.booksearch__results--item-title {
+.search__results--item-title {
   font-weight: 700;
 }
-.booksearch__results--item img {
+.search__results--item img {
   margin: 1rem;
 }
 

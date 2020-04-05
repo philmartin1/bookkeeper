@@ -19,20 +19,21 @@ function Search(props) {
   function searchBooks(e) {
     e.preventDefault();
     fetch(`${baseURL}${searchInput}&maxResults=20`)
-      .then(res => res.json())
-      .then(res => setSearchResults(res))
-      .catch(err => err);
+      .then((res) => res.json())
+      .then((res) => setSearchResults(res))
+      .catch((err) => err);
     setResultsStart(0);
     setPage(1);
     setInitialSearch(true);
+    scrollToSearch();
   }
 
   function updatePage(start) {
     setInitialSearch(false);
     fetch(`${baseURL}${searchInput}&maxResults=20&startIndex=${start}`)
-      .then(res => res.json())
-      .then(res => setSearchResults(res))
-      .catch(err => err);
+      .then((res) => res.json())
+      .then((res) => setSearchResults(res))
+      .catch((err) => err);
   }
 
   function nextPage() {
@@ -45,7 +46,7 @@ function Search(props) {
       setPage(page + 1);
       updatePage(newStart);
     }
-    scrollTop();
+    scrollToSearch();
   }
 
   function prevPage() {
@@ -60,10 +61,10 @@ function Search(props) {
     setResultsStart(newStart);
     updatePage(newStart);
     page > 1 ? setPage(page - 1) : setPage(1);
-    scrollTop();
+    scrollToSearch();
   }
 
-  function scrollTop() {
+  function scrollToSearch() {
     const headerHeight = document.querySelector("header").offsetHeight;
     const book = document.querySelector(".book");
     let bookHeight = 0;
@@ -72,7 +73,7 @@ function Search(props) {
     }
     document.scrollingElement.scrollTo({
       top: headerHeight + bookHeight,
-      behavior: "smooth"
+      behavior: "smooth",
     });
   }
 
@@ -83,8 +84,8 @@ function Search(props) {
   }, [initialSearch, searchResults.totalItems]);
 
   return (
-    <div className="booksearch">
-      <form className="booksearch__input" onSubmit={searchBooks}>
+    <div className="search">
+      <form className="search__input" onSubmit={searchBooks}>
         <input
           type="text"
           value={searchInput}
@@ -101,7 +102,7 @@ function Search(props) {
             prevPage={prevPage}
           />
         )}
-        <div className="booksearch__results">
+        <div className="search__results">
           {searchResults.totalItems > 0 &&
             searchResults.items.map((result, index) => {
               return (
@@ -120,7 +121,7 @@ function Search(props) {
               page={page}
               nextPage={nextPage}
               prevPage={prevPage}
-              scrollTop={scrollTop}
+              scrollTop={scrollToSearch}
             />
           )}
         </div>

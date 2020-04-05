@@ -6,15 +6,15 @@ function CurrentlyReading(props) {
       {props.book && (
         <div>
           <p>Currently Reading</p>
-          <a href="/">
+          {/* <a href="/">
             {" "}
-            {/* add react router? */}
-            <img
-              src={props.book.imageLinks.thumbnail}
-              alt={`front cover of ${props.book.title}`}
-              height="120px"
-            />
-          </a>
+            add react router? */}
+          <img
+            src={props.book.imageLinks.thumbnail}
+            alt={`front cover of ${props.book.title}`}
+            height="120px"
+          />
+          {/* </a> */}
         </div>
       )}
     </div>

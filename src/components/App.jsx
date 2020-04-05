@@ -18,7 +18,8 @@ function App() {
   return (
     <div>
       <Header currentlyReading={library.currentlyReading} />
-      <Main setLibrary={setLibrary} />
+      <Main setLibrary={setLibrary} library={library} />
+      <footer>Created by Phil Martin</footer>
     </div>
   );
 }
