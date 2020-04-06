@@ -6,7 +6,10 @@ function Header(props) {
   return (
     <header>
       <PageTitle />
-      <CurrentlyReading book={props.currentlyReading} />
+      <CurrentlyReading
+        book={props.currentlyReading}
+        setLibrary={props.setLibrary}
+      />
     </header>
   );
 }

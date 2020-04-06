@@ -18,6 +18,7 @@
 body {
   color: var(--purple);
   font-family: baskerville;
+  padding-bottom: 2rem;
 }
 
 ::selection {
@@ -94,7 +95,6 @@ header {
   flex-direction: column;
   justify-content: center;
   margin: 2rem auto;
-  min-height: 50vh;
   padding: 0.75rem;
   text-align: center;
   width: 90vw;

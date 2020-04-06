@@ -46,7 +46,7 @@ function Book(props) {
   function addToCollection() {
     const storedLibrary = JSON.parse(localStorage.getItem("library"));
     if (!storedLibrary.collection) storedLibrary.collection = [];
-    storedLibrary.collection.push(props.book);
+    storedLibrary.collection.unshift(props.book);
     props.setLibrary(storedLibrary);
     setTimeout(() => {
       scrollToCollection();
@@ -55,11 +55,6 @@ function Book(props) {
 
   return (
     <div className="book">
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <button onClick={clearSelectedBook}>CLOSE</button>
-        <button onClick={setCurrentlyReading}>Mark as currently reading</button>
-        <button onClick={addToCollection}>Add to collection</button>
-      </div>
       <div>
         <p className="search__results--item-title">{title}</p>
         {authors &&
@@ -79,6 +74,11 @@ function Book(props) {
             <p>Average Rating: {averageRating}</p>
           )}
         </div>
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+        <button onClick={clearSelectedBook}>CLOSE</button>
+        <button onClick={setCurrentlyReading}>Mark as currently reading</button>
+        <button onClick={addToCollection}>Add to collection</button>
       </div>
     </div>
   );
