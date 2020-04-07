@@ -9,6 +9,7 @@ function Book(props) {
     categories,
     pageCount,
     averageRating,
+    publishedDate,
   } = props.book;
 
   function scrollToSearch() {
@@ -55,30 +56,65 @@ function Book(props) {
 
   return (
     <div className="book">
-      <div>
-        <p className="search__results--item-title">{title}</p>
-        {authors &&
-          authors.map((author, index) => {
-            return <p key={index}>{author}</p>;
-          })}
-        {imageLinks && (
-          <div>
-            <img src={imageLinks.thumbnail} alt={`front cover of ${title}`} />
-          </div>
-        )}
-        <div>
-          {description !== undefined && <p>Description: {description}</p>}
-          {categories !== undefined && <p>Genre: {categories.join(", ")}</p>}
-          {pageCount !== undefined && <p>Pages: {pageCount}</p>}
+      <button className="book__close" onClick={clearSelectedBook}>
+        X
+      </button>
+      <div className="book__details">
+        <div className="book__details--main">
+          <h3 className="book__details--title">{title}</h3>
+          {authors &&
+            authors.map((author, index) => {
+              return (
+                <p className="book__details--author" key={index}>
+                  {author}
+                </p>
+              );
+            })}
+          {imageLinks && (
+            <img
+              src={imageLinks.thumbnail}
+              alt={`front cover of ${title}`}
+              width="200px"
+            />
+          )}
+        </div>
+        <div className="book__details--info">
+          {description !== undefined && (
+            <div>
+              <h4 className="book__details--subheading">Description</h4>
+              <p>{description}</p>
+            </div>
+          )}
+          {categories !== undefined && (
+            <div>
+              <h4 className="book__details--subheading">Genre</h4>
+              <p>{categories.join(", ")}</p>
+            </div>
+          )}
+          {pageCount !== undefined && (
+            <div>
+              <h4 className="book__details--subheading">Pages</h4>
+              <p>{pageCount}</p>
+            </div>
+          )}
           {averageRating !== undefined && (
-            <p>Average Rating: {averageRating}</p>
+            <div>
+              <h4 className="book__details--subheading">Average Rating</h4>
+              <p>{averageRating}</p>
+            </div>
+          )}
+          {publishedDate !== undefined && (
+            <div>
+              <h4 className="book__details--subheading">Published</h4>
+              <p>{publishedDate.slice(0, 4)}</p>
+            </div>
           )}
         </div>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-evenly" }}>
-        <button onClick={clearSelectedBook}>CLOSE</button>
-        <button onClick={setCurrentlyReading}>Mark as currently reading</button>
+      <div className="book__buttons-container">
         <button onClick={addToCollection}>Add to collection</button>
+        <button onClick={setCurrentlyReading}>Mark as currently reading</button>
+        <button onClick={clearSelectedBook}>Close</button>
       </div>
     </div>
   );

@@ -1,11 +1,78 @@
 .book {
   background-color: var(--lighter-purple);
-  box-shadow: 0 0 0px 1px var(--purple) inset;
+  box-shadow: 0 0 0 1px var(--purple) inset;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 2rem auto;
   padding: 0.75rem;
-  text-align: center;
+  position: relative;
   width: 90vw;
+
+  &__details {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 90%;
+
+    @media (max-width: 800px) {
+      flex-direction: column;
+    }
+
+    &--main {
+      text-align: right;
+      width: 30%;
+
+      @media (max-width: 800px) {
+        text-align: center;
+        width: initial;
+      }
+
+      & > * {
+        margin: 1rem 0;
+      }
+    }
+
+    &--title {
+      font-size: 1.75rem;
+      font-weight: 700;
+    }
+
+    &--author {
+      font-size: 1.1rem;
+    }
+
+    &--info {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+
+      @media (max-width: 800px) {
+        width: initial;
+      }
+
+      & > div {
+        line-height: 1.5;
+        margin: 1rem 0;
+      }
+    }
+
+    &--subheading {
+      font-size: 1.1rem;
+    }
+  }
+
+  &__close {
+    font-family: Arial, Helvetica, sans-serif;
+    left: calc(100% - 2rem);
+    position: absolute;
+    top: 1rem;
+    width: 1rem;
+  }
+
+  &__buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+  }
 }
