@@ -19,10 +19,10 @@ function CurrentlyReading(props) {
   }
 
   return (
-    <div className="current-book__container">
+    <div className="currently-reading">
       {props.book && (
         <div onMouseEnter={showClearButton} onMouseLeave={hideClearButton}>
-          <p>Currently Reading</p>
+          <p className="currently-reading__title">Currently Reading</p>
           <img
             src={props.book.imageLinks.thumbnail}
             alt={`front cover of ${props.book.title}`}
@@ -30,11 +30,7 @@ function CurrentlyReading(props) {
           />
           {clearButton && (
             <button
-              style={{
-                width: "1rem",
-                position: "absolute",
-                right: "2rem",
-              }}
+              className="currently-reading__clear"
               onClick={clearCurrentlyReading}
             >
               X
