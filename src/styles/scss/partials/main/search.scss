@@ -1,6 +1,6 @@
 .search {
   text-align: center;
-  border-bottom: 1px solid var(--lighter-purple);
+  border-bottom: 1px solid var(--primary-lighter);
 
   form {
     display: flex;
@@ -13,7 +13,7 @@
     background-color: var(--grey);
     border: none;
     border-radius: 0;
-    color: var(--purple);
+    color: var(--primary);
     font-family: baskerville;
     font-size: 2rem;
     max-width: 80vw;
@@ -21,15 +21,15 @@
     padding: 0.5rem;
 
     &::placeholder {
-      color: var(--light-purple);
+      color: var(--primary-light);
     }
 
     &:hover {
-      background-color: var(--lighter-orange);
+      background-color: var(--secondary-lighter);
     }
 
     &:focus {
-      background-color: var(--light-orange);
+      background-color: var(--secondary-light);
     }
   }
 
@@ -57,7 +57,7 @@
 
     &--item {
       @extend .book;
-      background-color: var(--light-grey);
+      background-color: var(--grey-light);
       box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1) inset;
       cursor: pointer;
       margin: 0;
@@ -68,14 +68,14 @@
       }
 
       &:hover {
-        background-color: var(--lighter-purple);
-        box-shadow: 0 0 0px 1px var(--purple) inset;
+        background-color: var(--primary-lighter);
+        box-shadow: 0 0 0px 1px var(--primary) inset;
       }
 
       &:active {
-        background-color: var(--lighter-orange);
-        box-shadow: 0 0 0px 1px var(--orange) inset;
-        color: var(--orange);
+        background-color: var(--secondary-lighter);
+        box-shadow: 0 0 0px 1px var(--secondary) inset;
+        color: var(--secondary);
       }
 
       &-title {

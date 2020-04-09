@@ -1,5 +1,5 @@
 header {
-  background-color: var(--lighter-purple);
+  background-color: var(--primary-lighter);
   display: flex;
   justify-content: space-between;
   padding: 0 0.5rem;
@@ -10,7 +10,7 @@ header {
 }
 
 .page-title {
-  color: var(--purple);
+  color: var(--primary);
   font-size: 5rem;
   text-decoration: none;
 
@@ -23,20 +23,20 @@ header {
   }
 
   &--book {
-    text-shadow: textShadow(var(--light-orange));
+    text-shadow: textShadow(var(--secondary-light));
     top: 0.75rem;
   }
 
   &--keep {
     bottom: 0.75rem;
-    color: var(--orange);
+    color: var(--secondary);
     letter-spacing: 3px;
-    text-shadow: textShadow(var(--light-purple));
+    text-shadow: textShadow(var(--primary-light));
   }
 
   &--er {
     bottom: 0.75rem;
-    color: var(--light-orange);
+    color: var(--secondary-light);
     text-shadow: none;
   }
 }

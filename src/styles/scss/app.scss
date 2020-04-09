@@ -1,8 +1,8 @@
-@import "./partials/colors.scss";
-@import "./partials/resets.scss";
-@import "./partials/button.scss";
+@import "./partials/global/colors.scss";
+@import "./partials/global/resets.scss";
+@import "./partials/global/button.scss";
 @import "./partials/header.scss";
-@import "./partials/book.scss";
-@import "./partials/search.scss";
-@import "./partials/collection.scss";
+@import "./partials/main/book.scss";
+@import "./partials/main/search.scss";
+@import "./partials/main/collection.scss";
 @import "./partials/footer.scss";

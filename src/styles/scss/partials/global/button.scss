@@ -1,0 +1,23 @@
+button {
+  background-color: var(--primary-lighter);
+  border: 1px solid var(--primary-lighter);
+  color: var(--primary);
+  cursor: pointer;
+  font-family: baskerville;
+  font-size: 1rem;
+  width: 20vw;
+
+  &:hover {
+    border: 1px solid var(--primary);
+  }
+
+  &:active {
+    background-color: var(--secondary-lighter);
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
