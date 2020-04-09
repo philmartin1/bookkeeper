@@ -22,18 +22,9 @@ function App() {
         setLibrary={setLibrary}
       />
       <Main setLibrary={setLibrary} library={library} />
-      <footer style={footerStyle}>Created by Phil Martin</footer>
+      <footer>Created by Phil Martin</footer>
     </div>
   );
 }
-
-const footerStyle = {
-  backgroundColor: "var(--light-purple)",
-  bottom: "0",
-  color: "var(--grey)",
-  fontSize: "1.1rem",
-  padding: "0.25em 0.5em",
-  position: "fixed",
-};
 
 export default App;

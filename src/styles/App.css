@@ -272,4 +272,13 @@ header {
   width: 150px;
 }
 
+footer {
+  background-color: var(--light-purple);
+  bottom: 0;
+  color: var(--grey);
+  font-size: 1.1rem;
+  padding: 0.25em 0.5em;
+  position: fixed;
+}
+
 /*# sourceMappingURL=App.css.map */
