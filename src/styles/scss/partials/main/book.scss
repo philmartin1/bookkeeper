@@ -1,6 +1,6 @@
 .book {
-  background-color: var(--primary-lighter);
-  box-shadow: 0 0 0 1px var(--primary) inset;
+  background-color: $primary-lighter;
+  box-shadow: 0 0 0 1px $primary inset;
   display: flex;
   flex-direction: column;
   justify-content: center;

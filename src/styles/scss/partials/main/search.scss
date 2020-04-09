@@ -1,6 +1,6 @@
 .search {
   text-align: center;
-  border-bottom: 1px solid var(--primary-lighter);
+  border-bottom: 1px solid $primary-lighter;
 
   form {
     display: flex;
@@ -10,10 +10,10 @@
   }
 
   input {
-    background-color: var(--grey);
+    background-color: $neutral;
     border: none;
     border-radius: 0;
-    color: var(--primary);
+    color: $primary;
     font-family: baskerville;
     font-size: 2rem;
     max-width: 80vw;
@@ -21,15 +21,15 @@
     padding: 0.5rem;
 
     &::placeholder {
-      color: var(--primary-light);
+      color: $primary-light;
     }
 
     &:hover {
-      background-color: var(--secondary-lighter);
+      background-color: $secondary-lighter;
     }
 
     &:focus {
-      background-color: var(--secondary-light);
+      background-color: $secondary-light;
     }
   }
 
@@ -57,8 +57,8 @@
 
     &--item {
       @extend .book;
-      background-color: var(--grey-light);
-      box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1) inset;
+      background-color: $neutral-light;
+      box-shadow: 0 0 0px 1px $neutral inset;
       cursor: pointer;
       margin: 0;
       width: 25vw;
@@ -68,14 +68,14 @@
       }
 
       &:hover {
-        background-color: var(--primary-lighter);
-        box-shadow: 0 0 0px 1px var(--primary) inset;
+        background-color: $primary-lighter;
+        box-shadow: 0 0 0px 1px $primary inset;
       }
 
       &:active {
-        background-color: var(--secondary-lighter);
-        box-shadow: 0 0 0px 1px var(--secondary) inset;
-        color: var(--secondary);
+        background-color: $secondary-lighter;
+        box-shadow: 0 0 0px 1px $secondary inset;
+        color: $secondary;
       }
 
       &-title {

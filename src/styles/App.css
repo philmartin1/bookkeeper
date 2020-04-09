@@ -1,14 +1,3 @@
-:root {
-  --primary: rgb(49, 77, 228);
-  --primary-light: rgba(49, 77, 228, 0.5);
-  --primary-lighter: rgba(49, 77, 228, 0.1);
-  --secondary: rgb(241, 103, 23);
-  --secondary-light: rgba(241, 103, 23, 0.5);
-  --secondary-lighter: rgba(241, 103, 23, 0.3);
-  --grey: rgb(235, 236, 236);
-  --grey-light: rgba(235, 236, 236, 0.5);
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,46 +5,46 @@
 }
 
 body {
-  color: var(--primary);
+  color: #314de4;
   font-family: baskerville;
   padding-bottom: 2rem;
 }
 
 ::selection {
-  background-color: var(--primary);
-  color: var(--secondary);
+  background-color: #314de4;
+  color: #f16717;
 }
 
 button {
-  background-color: var(--primary-lighter);
-  border: 1px solid var(--primary-lighter);
-  color: var(--primary);
+  background-color: rgba(49, 77, 228, 0.1);
+  border: 1px solid rgba(49, 77, 228, 0.1);
+  color: #314de4;
   cursor: pointer;
   font-family: baskerville;
   font-size: 1rem;
   width: 20vw;
 }
 button:hover {
-  border: 1px solid var(--primary);
+  border: 1px solid #314de4;
 }
 button:active {
-  background-color: var(--secondary-lighter);
-  border: 1px solid var(--secondary);
-  color: var(--secondary);
+  background-color: rgba(241, 103, 23, 0.3);
+  border: 1px solid #f16717;
+  color: #f16717;
 }
 button:focus {
   outline: none;
 }
 
 header {
-  background-color: var(--primary-lighter);
+  background-color: rgba(49, 77, 228, 0.1);
   display: flex;
   justify-content: space-between;
   padding: 0 0.5rem;
 }
 
 .page-title {
-  color: var(--primary);
+  color: #314de4;
   font-size: 5rem;
   text-decoration: none;
 }
@@ -66,18 +55,18 @@ header {
   position: relative;
 }
 .page-title--book {
-  text-shadow: 2px 0 0 var(--secondary-light);
+  text-shadow: 2px 0 0 rgba(241, 103, 23, 0.5);
   top: 0.75rem;
 }
 .page-title--keep {
   bottom: 0.75rem;
-  color: var(--secondary);
+  color: #f16717;
   letter-spacing: 3px;
-  text-shadow: 2px 0 0 var(--primary-light);
+  text-shadow: 2px 0 0 rgba(49, 77, 228, 0.5);
 }
 .page-title--er {
   bottom: 0.75rem;
-  color: var(--secondary-light);
+  color: rgba(241, 103, 23, 0.5);
   text-shadow: none;
 }
 
@@ -97,8 +86,8 @@ header {
 }
 
 .book, .search__results--item {
-  background-color: var(--primary-lighter);
-  box-shadow: 0 0 0 1px var(--primary) inset;
+  background-color: rgba(49, 77, 228, 0.1);
+  box-shadow: 0 0 0 1px #314de4 inset;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -171,7 +160,7 @@ header {
 
 .search {
   text-align: center;
-  border-bottom: 1px solid var(--primary-lighter);
+  border-bottom: 1px solid rgba(49, 77, 228, 0.1);
 }
 .search form {
   display: flex;
@@ -180,10 +169,10 @@ header {
   padding: 0.5rem;
 }
 .search input {
-  background-color: var(--grey);
+  background-color: #ebecec;
   border: none;
   border-radius: 0;
-  color: var(--primary);
+  color: #314de4;
   font-family: baskerville;
   font-size: 2rem;
   max-width: 80vw;
@@ -191,13 +180,13 @@ header {
   padding: 0.5rem;
 }
 .search input::placeholder {
-  color: var(--primary-light);
+  color: rgba(49, 77, 228, 0.5);
 }
 .search input:hover {
-  background-color: var(--secondary-lighter);
+  background-color: rgba(241, 103, 23, 0.3);
 }
 .search input:focus {
-  background-color: var(--secondary-light);
+  background-color: rgba(241, 103, 23, 0.5);
 }
 .search__button {
   width: 3rem;
@@ -218,8 +207,8 @@ header {
   padding: 0.2rem;
 }
 .search__results--item {
-  background-color: var(--grey-light);
-  box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1) inset;
+  background-color: rgba(235, 236, 236, 0.5);
+  box-shadow: 0 0 0px 1px #ebecec inset;
   cursor: pointer;
   margin: 0;
   width: 25vw;
@@ -230,13 +219,13 @@ header {
   }
 }
 .search__results--item:hover {
-  background-color: var(--primary-lighter);
-  box-shadow: 0 0 0px 1px var(--primary) inset;
+  background-color: rgba(49, 77, 228, 0.1);
+  box-shadow: 0 0 0px 1px #314de4 inset;
 }
 .search__results--item:active {
-  background-color: var(--secondary-lighter);
-  box-shadow: 0 0 0px 1px var(--secondary) inset;
-  color: var(--secondary);
+  background-color: rgba(241, 103, 23, 0.3);
+  box-shadow: 0 0 0px 1px #f16717 inset;
+  color: #f16717;
 }
 .search__results--item-title {
   font-weight: 700;
@@ -273,9 +262,9 @@ header {
 }
 
 footer {
-  background-color: var(--primary-light);
+  background-color: rgba(49, 77, 228, 0.5);
   bottom: 0;
-  color: var(--grey);
+  color: #ebecec;
   font-size: 1.1rem;
   padding: 0.25em 0.5em;
   position: fixed;

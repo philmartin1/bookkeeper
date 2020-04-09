@@ -1,5 +1,5 @@
 header {
-  background-color: var(--primary-lighter);
+  background-color: $primary-lighter;
   display: flex;
   justify-content: space-between;
   padding: 0 0.5rem;
@@ -10,7 +10,7 @@ header {
 }
 
 .page-title {
-  color: var(--primary);
+  color: $primary;
   font-size: 5rem;
   text-decoration: none;
 
@@ -23,20 +23,20 @@ header {
   }
 
   &--book {
-    text-shadow: textShadow(var(--secondary-light));
+    text-shadow: textShadow($secondary-light);
     top: 0.75rem;
   }
 
   &--keep {
     bottom: 0.75rem;
-    color: var(--secondary);
+    color: $secondary;
     letter-spacing: 3px;
-    text-shadow: textShadow(var(--primary-light));
+    text-shadow: textShadow($primary-light);
   }
 
   &--er {
     bottom: 0.75rem;
-    color: var(--secondary-light);
+    color: $secondary-light;
     text-shadow: none;
   }
 }
