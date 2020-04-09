@@ -47,19 +47,13 @@ function Collection(props) {
   }
 
   return (
-    <div className="collection" style={{ textAlign: "center" }}>
-      <h2>Collection</h2>
-      <div
-        style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-        }}
-      >
+    <div className="collection">
+      <h2 className="collection__heading">Collection</h2>
+      <div className="collection__items-container">
         {collection &&
           collection.map((book, index) => {
             return (
-              <div key={index} id={index} style={itemStyle}>
+              <div key={index} id={index} className="collection__item">
                 {book.imageLinks && (
                   <img
                     src={book.imageLinks.thumbnail}
@@ -71,7 +65,7 @@ function Collection(props) {
                 <div>
                   <button
                     book-index={index}
-                    style={buttonStyle}
+                    className="collection__button"
                     onClick={setCurrentlyReading}
                   >
                     Mark as currently reading
@@ -79,7 +73,7 @@ function Collection(props) {
                   <br />
                   <button
                     book-index={index}
-                    style={buttonStyle}
+                    className="collection__button"
                     onClick={removeFromCollection}
                   >
                     Remove from collection
@@ -92,22 +86,5 @@ function Collection(props) {
     </div>
   );
 }
-
-const buttonStyle = {
-  fontSize: "0.75rem",
-  margin: "0.25rem 0",
-  width: "150px",
-};
-
-const itemStyle = {
-  alignItems: "center",
-  color: "var(--purple)",
-  cursor: "pointer",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  margin: "0.25rem",
-  padding: "0.75rem",
-};
 
 export default Collection;

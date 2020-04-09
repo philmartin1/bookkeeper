@@ -103,6 +103,7 @@ header {
   flex-direction: column;
   justify-content: center;
   margin: 2rem auto;
+  max-width: 1000px;
   padding: 0.75rem;
   position: relative;
   width: 90vw;
@@ -170,17 +171,22 @@ header {
 
 .search {
   text-align: center;
+  border-bottom: 1px solid var(--lighter-purple);
 }
 .search form {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem;
   padding: 0.5rem;
 }
 .search input {
   background-color: var(--grey);
   border: none;
+  border-radius: 0;
   color: var(--purple);
   font-family: baskerville;
   font-size: 2rem;
-  max-width: 90vw;
+  max-width: 80vw;
   outline: none;
   padding: 0.5rem;
 }
@@ -193,17 +199,23 @@ header {
 .search input:focus {
   background-color: var(--light-orange);
 }
-.search__pagination {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem;
-}
-.search__pagination > * {
-  padding: 0.2rem;
+.search__button {
+  width: 3rem;
 }
 .search__results {
   display: flex;
   flex-flow: wrap;
+}
+.search__results--total {
+  margin: 0.5rem;
+}
+.search__results--pagination {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+.search__results--pagination > * {
+  padding: 0.2rem;
 }
 .search__results--item {
   background-color: var(--light-grey);
@@ -231,6 +243,33 @@ header {
 }
 .search__results--item img {
   margin: 1rem;
+}
+
+.collection {
+  text-align: center;
+}
+.collection__heading {
+  font-size: 2rem;
+  margin: 1rem 0 0 0;
+}
+.collection__items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.collection__item {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0.25rem;
+  padding: 0.75rem;
+}
+.collection__button {
+  font-size: 0.75rem;
+  margin: 0.25rem 0;
+  width: 150px;
 }
 
 /*# sourceMappingURL=App.css.map */

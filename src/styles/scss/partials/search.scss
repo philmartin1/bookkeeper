@@ -1,42 +1,59 @@
 .search {
   text-align: center;
+  border-bottom: 1px solid var(--lighter-purple);
 
   form {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem;
     padding: 0.5rem;
   }
+
   input {
     background-color: var(--grey);
     border: none;
+    border-radius: 0;
     color: var(--purple);
     font-family: baskerville;
     font-size: 2rem;
-    max-width: 90vw;
+    max-width: 80vw;
     outline: none;
     padding: 0.5rem;
+
     &::placeholder {
       color: var(--light-purple);
     }
+
     &:hover {
       background-color: var(--lighter-orange);
     }
+
     &:focus {
       background-color: var(--light-orange);
     }
   }
 
-  &__pagination {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.5rem;
-
-    & > * {
-      padding: 0.2rem;
-    }
+  &__button {
+    width: 3rem;
   }
 
   &__results {
     display: flex;
     flex-flow: wrap;
+
+    &--total {
+      margin: 0.5rem;
+    }
+
+    &--pagination {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem;
+
+      & > * {
+        padding: 0.2rem;
+      }
+    }
 
     &--item {
       @extend .book;

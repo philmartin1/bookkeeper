@@ -1,0 +1,30 @@
+.collection {
+  text-align: center;
+
+  &__heading {
+    font-size: 2rem;
+    margin: 1rem 0 0 0;
+  }
+
+  &__items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__item {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  &__button {
+    font-size: 0.75rem;
+    margin: 0.25rem 0;
+    width: 150px;
+  }
+}

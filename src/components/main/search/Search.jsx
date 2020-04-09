@@ -92,15 +92,21 @@ function Search(props) {
           onChange={handleInput}
           placeholder="Search..."
         />
+        <button className="search__button" onClick={searchBooks}>
+          Go
+        </button>
       </form>
       <div>
         {searchResults.totalItems !== undefined && (
-          <ResultsNav
-            totalResults={totalResults}
-            page={page}
-            nextPage={nextPage}
-            prevPage={prevPage}
-          />
+          <React.Fragment>
+            <p className="search__results--total">{`${totalResults} results`}</p>
+            <ResultsNav
+              totalResults={totalResults}
+              page={page}
+              nextPage={nextPage}
+              prevPage={prevPage}
+            />
+          </React.Fragment>
         )}
         <div className="search__results">
           {searchResults.totalItems > 0 &&
