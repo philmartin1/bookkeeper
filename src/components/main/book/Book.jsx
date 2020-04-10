@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Book(props) {
   const {
@@ -11,6 +11,8 @@ function Book(props) {
     averageRating,
     publishedDate,
   } = props.book;
+
+  const [duplicateAdded, setDuplicateAdded] = useState(false);
 
   function scrollToSearch() {
     const headerHeight = document.querySelector("header").offsetHeight;
@@ -54,9 +56,15 @@ function Book(props) {
       if (
         item.industryIdentifiers[1].identifier ===
         props.book.industryIdentifiers[1].identifier
-      )
+      ) {
         isDuplicate = true;
+        setDuplicateAdded(true);
+        setTimeout(() => {
+          setDuplicateAdded(false);
+        }, 1500);
+      }
     });
+    !isDuplicate && addBook(props.book);
 
     function addBook(book) {
       storedLibrary.collection.unshift(book);
@@ -65,12 +73,15 @@ function Book(props) {
         scrollToCollection();
       }, 1);
     }
-
-    if (isDuplicate !== true) addBook(props.book);
   }
 
   return (
     <div className="book">
+      {duplicateAdded && (
+        <div className="book__duplicate-warning">
+          This book is already in your collection.
+        </div>
+      )}
       <button className="book__close" onClick={clearSelectedBook}>
         X
       </button>

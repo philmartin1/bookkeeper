@@ -28,7 +28,7 @@ button:hover {
   border: 1px solid #314de4;
 }
 button:active {
-  background-color: rgba(0, 163, 173, 0.3);
+  background-color: rgba(0, 163, 173, 0.1);
   border: 1px solid #00a3ad;
   color: #00a3ad;
 }
@@ -145,6 +145,25 @@ header {
 .book__details--subheading {
   font-size: 1.1rem;
 }
+.book__duplicate-warning {
+  background-color: #e5f6f7;
+  border: 1px solid #00a3ad;
+  color: #00a3ad;
+  font-size: 1.5rem;
+  left: calc(50% - 10vw);
+  padding: 1rem;
+  position: fixed;
+  text-align: center;
+  top: 30%;
+  width: 20vw;
+  z-index: 1;
+}
+@media (max-width: 800px) {
+  .book__duplicate-warning {
+    left: calc(50% - 20vw);
+    width: 40vw;
+  }
+}
 .book__close {
   font-family: Arial, Helvetica, sans-serif;
   left: calc(100% - 2rem);
@@ -183,7 +202,7 @@ header {
   color: rgba(49, 77, 228, 0.5);
 }
 .search input:hover {
-  background-color: rgba(0, 163, 173, 0.3);
+  background-color: rgba(0, 163, 173, 0.1);
 }
 .search input:focus {
   background-color: rgba(0, 163, 173, 0.5);
@@ -223,7 +242,7 @@ header {
   box-shadow: 0 0 0px 1px #314de4 inset;
 }
 .search__results--item:active {
-  background-color: rgba(0, 163, 173, 0.3);
+  background-color: rgba(0, 163, 173, 0.1);
   box-shadow: 0 0 0px 1px #00a3ad inset;
   color: #00a3ad;
 }
@@ -248,6 +267,7 @@ header {
 }
 .collection__item {
   align-items: center;
+  border: 1px solid rgba(0, 163, 173, 0.1);
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -255,10 +275,26 @@ header {
   margin: 0.25rem;
   padding: 0.75rem;
 }
+.collection__item:hover {
+  background-color: rgba(0, 163, 173, 0.1);
+  border-color: #00a3ad;
+}
 .collection__button {
+  background-color: rgba(0, 163, 173, 0.1);
+  border-color: rgba(0, 163, 173, 0.1);
+  color: #00a3ad;
   font-size: 0.75rem;
   margin: 0.25rem 0;
   width: 150px;
+}
+.collection__button:hover {
+  border: 1px solid #00a3ad;
+  background-color: rgba(0, 163, 173, 0.1);
+}
+.collection__button:active {
+  background-color: rgba(49, 77, 228, 0.1);
+  border: 1px solid #314de4;
+  color: #314de4;
 }
 
 footer {
