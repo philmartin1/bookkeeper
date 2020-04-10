@@ -12,7 +12,7 @@ body {
 
 ::selection {
   background-color: #314de4;
-  color: #f16717;
+  color: #00a3ad;
 }
 
 button {
@@ -28,9 +28,9 @@ button:hover {
   border: 1px solid #314de4;
 }
 button:active {
-  background-color: rgba(241, 103, 23, 0.3);
-  border: 1px solid #f16717;
-  color: #f16717;
+  background-color: rgba(0, 163, 173, 0.3);
+  border: 1px solid #00a3ad;
+  color: #00a3ad;
 }
 button:focus {
   outline: none;
@@ -55,18 +55,18 @@ header {
   position: relative;
 }
 .page-title--book {
-  text-shadow: 2px 0 0 rgba(241, 103, 23, 0.5);
+  text-shadow: 2px 0 0 rgba(0, 163, 173, 0.5);
   top: 0.75rem;
 }
 .page-title--keep {
   bottom: 0.75rem;
-  color: #f16717;
+  color: #00a3ad;
   letter-spacing: 3px;
   text-shadow: 2px 0 0 rgba(49, 77, 228, 0.5);
 }
 .page-title--er {
   bottom: 0.75rem;
-  color: rgba(241, 103, 23, 0.5);
+  color: rgba(0, 163, 173, 0.5);
   text-shadow: none;
 }
 
@@ -183,10 +183,10 @@ header {
   color: rgba(49, 77, 228, 0.5);
 }
 .search input:hover {
-  background-color: rgba(241, 103, 23, 0.3);
+  background-color: rgba(0, 163, 173, 0.3);
 }
 .search input:focus {
-  background-color: rgba(241, 103, 23, 0.5);
+  background-color: rgba(0, 163, 173, 0.5);
 }
 .search__button {
   width: 3rem;
@@ -223,9 +223,9 @@ header {
   box-shadow: 0 0 0px 1px #314de4 inset;
 }
 .search__results--item:active {
-  background-color: rgba(241, 103, 23, 0.3);
-  box-shadow: 0 0 0px 1px #f16717 inset;
-  color: #f16717;
+  background-color: rgba(0, 163, 173, 0.3);
+  box-shadow: 0 0 0px 1px #00a3ad inset;
+  color: #00a3ad;
 }
 .search__results--item-title {
   font-weight: 700;

@@ -47,11 +47,26 @@ function Book(props) {
   function addToCollection() {
     const storedLibrary = JSON.parse(localStorage.getItem("library"));
     if (!storedLibrary.collection) storedLibrary.collection = [];
-    storedLibrary.collection.unshift(props.book);
-    props.setLibrary(storedLibrary);
-    setTimeout(() => {
-      scrollToCollection();
-    }, 1);
+
+    let isDuplicate;
+
+    storedLibrary.collection.forEach((item) => {
+      if (
+        item.industryIdentifiers[1].identifier ===
+        props.book.industryIdentifiers[1].identifier
+      )
+        isDuplicate = true;
+    });
+
+    function addBook(book) {
+      storedLibrary.collection.unshift(book);
+      props.setLibrary(storedLibrary);
+      setTimeout(() => {
+        scrollToCollection();
+      }, 1);
+    }
+
+    if (isDuplicate !== true) addBook(props.book);
   }
 
   return (
