@@ -54,13 +54,17 @@ function Collection(props) {
           collection.map((book, index) => {
             return (
               <div key={index} id={index} className="collection__item">
-                {book.imageLinks && (
+                {book.imageLinks ? (
                   <img
                     src={book.imageLinks.thumbnail}
                     alt={`front cover of ${book.title}`}
                     width="150px"
                     onClick={openBook}
                   />
+                ) : (
+                  <p className="collection__no-image" onClick={openBook}>
+                    {book.title} by {book.authors[0]}
+                  </p>
                 )}
                 <div>
                   <button

@@ -15,7 +15,6 @@
   &__item {
     align-items: center;
     border: 1px solid $secondary-lighter;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,6 +25,18 @@
       background-color: $secondary-lighter;
       border-color: $secondary;
     }
+
+    & img:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__no-image {
+    cursor: pointer;
+    height: 100%;
+    line-height: 1.5;
+    padding: 1rem;
+    width: 150px;
   }
 
   &__button {
