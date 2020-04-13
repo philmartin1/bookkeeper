@@ -100,12 +100,14 @@ function Search(props) {
         {searchResults.totalItems !== undefined && (
           <React.Fragment>
             <p className="search__results--total">{`${totalResults} results`}</p>
-            <ResultsNav
-              totalResults={totalResults}
-              page={page}
-              nextPage={nextPage}
-              prevPage={prevPage}
-            />
+            {searchResults.totalItems > 0 && (
+              <ResultsNav
+                totalResults={totalResults}
+                page={page}
+                nextPage={nextPage}
+                prevPage={prevPage}
+              />
+            )}
           </React.Fragment>
         )}
         <div className="search__results">
@@ -113,7 +115,7 @@ function Search(props) {
             searchResults.items.map((result, index) => {
               return (
                 <ResultTile
-                  book={result.volumeInfo}
+                  book={result}
                   key={index}
                   setSelectedBook={props.setSelectedBook}
                 />
@@ -121,7 +123,7 @@ function Search(props) {
             })}
         </div>
         <div>
-          {searchResults.totalItems !== undefined && (
+          {searchResults.totalItems > 0 && (
             <ResultsNav
               totalResults={totalResults}
               page={page}

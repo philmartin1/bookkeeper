@@ -24,8 +24,8 @@ function CurrentlyReading(props) {
         <div onMouseEnter={showClearButton} onMouseLeave={hideClearButton}>
           <p className="currently-reading__title">Currently Reading</p>
           <img
-            src={props.book.imageLinks.thumbnail}
-            alt={`front cover of ${props.book.title}`}
+            src={props.book.volumeInfo.imageLinks.thumbnail}
+            alt={`front cover of ${props.book.volumeInfo.title}`}
             height="120px"
           />
           {clearButton && (

@@ -10,7 +10,7 @@ function Book(props) {
     pageCount,
     averageRating,
     publishedDate,
-  } = props.book;
+  } = props.book.volumeInfo;
 
   const [duplicateAdded, setDuplicateAdded] = useState(false);
 
@@ -53,10 +53,7 @@ function Book(props) {
     let isDuplicate;
 
     storedLibrary.collection.forEach((item) => {
-      if (
-        item.industryIdentifiers[1].identifier ===
-        props.book.industryIdentifiers[1].identifier
-      ) {
+      if (item.id === props.book.id) {
         isDuplicate = true;
         setDuplicateAdded(true);
         setTimeout(() => {

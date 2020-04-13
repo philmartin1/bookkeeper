@@ -2,13 +2,13 @@ import React from "react";
 
 function ResultTile(props) {
   let bookAuthors;
-  if (props.book.authors) {
-    if (props.book.authors.length === 2) {
-      bookAuthors = `${props.book.authors[0]}, ${props.book.authors[1]}`;
-    } else if (props.book.authors.length > 2) {
-      bookAuthors = `${props.book.authors[0]}, ${props.book.authors[1]}...`;
+  if (props.book.volumeInfo.authors) {
+    if (props.book.volumeInfo.authors.length === 2) {
+      bookAuthors = `${props.book.volumeInfo.authors[0]}, ${props.book.volumeInfo.authors[1]}`;
+    } else if (props.book.volumeInfo.authors.length > 2) {
+      bookAuthors = `${props.book.volumeInfo.authors[0]}, ${props.book.volumeInfo.authors[1]}...`;
     } else {
-      bookAuthors = props.book.authors[0];
+      bookAuthors = props.book.volumeInfo.authors[0];
     }
   }
 
@@ -20,7 +20,7 @@ function ResultTile(props) {
     });
   }
 
-  function openBook(e) {
+  function openBook() {
     props.setSelectedBook(props.book);
     setTimeout(() => {
       scrollTop();
@@ -29,16 +29,18 @@ function ResultTile(props) {
 
   return (
     <div className="search__results--item" onClick={openBook}>
-      {props.book.imageLinks && (
+      {props.book.volumeInfo.imageLinks && (
         <div>
           <img
-            src={props.book.imageLinks.thumbnail}
-            alt={`front cover of ${props.book.title}`}
+            src={props.book.volumeInfo.imageLinks.thumbnail}
+            alt={`front cover of ${props.book.volumeInfo.title}`}
           />
         </div>
       )}
       <div>
-        <p className="search__results--item-title">{props.book.title}</p>
+        <p className="search__results--item-title">
+          {props.book.volumeInfo.title}
+        </p>
         <p>{bookAuthors}</p>
       </div>
     </div>
