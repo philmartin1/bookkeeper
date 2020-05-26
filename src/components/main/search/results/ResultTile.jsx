@@ -2,15 +2,8 @@ import React from "react";
 
 function ResultTile(props) {
   let bookAuthors;
-  if (props.book.volumeInfo.authors) {
-    if (props.book.volumeInfo.authors.length === 2) {
-      bookAuthors = `${props.book.volumeInfo.authors[0]}, ${props.book.volumeInfo.authors[1]}`;
-    } else if (props.book.volumeInfo.authors.length > 2) {
-      bookAuthors = `${props.book.volumeInfo.authors[0]}, ${props.book.volumeInfo.authors[1]}...`;
-    } else {
-      bookAuthors = props.book.volumeInfo.authors[0];
-    }
-  }
+  props.book.volumeInfo.authors &&
+    (bookAuthors = props.book.volumeInfo.authors.join(", "));
 
   function scrollTop() {
     const headerHeight = document.querySelector("header").offsetHeight;
@@ -41,7 +34,16 @@ function ResultTile(props) {
         <p className="search__results--item-title">
           {props.book.volumeInfo.title}
         </p>
-        <p>{bookAuthors}</p>
+        <p
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+            width: "100%",
+          }}
+        >
+          {bookAuthors}
+        </p>
       </div>
     </div>
   );
