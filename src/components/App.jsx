@@ -22,7 +22,16 @@ function App() {
         setLibrary={setLibrary}
       />
       <Main setLibrary={setLibrary} library={library} />
-      <footer>Created by Phil Martin</footer>
+      <footer>
+        Created by{" "}
+        <a
+          href="https://philmartin.dev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Phil Martin
+        </a>
+      </footer>
     </div>
   );
 }

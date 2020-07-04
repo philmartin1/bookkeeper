@@ -5,4 +5,13 @@ footer {
   font-size: 1.1rem;
   padding: 0.25em 0.5em;
   position: fixed;
+
+  a {
+    color: $primary;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

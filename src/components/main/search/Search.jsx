@@ -91,6 +91,7 @@ function Search(props) {
           value={searchInput}
           onChange={handleInput}
           placeholder="Search..."
+          aria-label="Search input"
         />
         <button className="search__button" onClick={searchBooks}>
           Go

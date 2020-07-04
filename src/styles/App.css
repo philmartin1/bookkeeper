@@ -314,5 +314,12 @@ footer {
   padding: 0.25em 0.5em;
   position: fixed;
 }
+footer a {
+  color: #314de4;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=App.css.map */
